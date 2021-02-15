@@ -17,7 +17,6 @@ class ProductsTest < ApplicationSystemTestCase
     fill_in "Description", with: @product.description
     fill_in "Image url", with: @product.image_url
     fill_in "Price", with: @product.price
-    fill_in "String", with: @product.string
     fill_in "Title", with: @product.title
     click_on "Create Product"
 
@@ -32,7 +31,6 @@ class ProductsTest < ApplicationSystemTestCase
     fill_in "Description", with: @product.description
     fill_in "Image url", with: @product.image_url
     fill_in "Price", with: @product.price
-    fill_in "String", with: @product.string
     fill_in "Title", with: @product.title
     click_on "Update Product"
 

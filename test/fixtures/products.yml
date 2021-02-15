@@ -3,13 +3,17 @@
 one:
   title: MyString
   description: MyText
-  image_url: MyString
-  string: MyString
+  image_url: elena-koycheva-1393825-unsplash.jpg
   price: 9.99
 
 two:
   title: MyString
   description: MyText
-  image_url: MyString
-  string: MyString
+  image_url: elena-koycheva-1393825-unsplash.jpg
+  price: 9.99
+
+ruby:
+  title: Build Chatbot Interactions
+  description: Responsive, Intuitive Interfaces with Ruby.
+  image_url: elena-koycheva-1393825-unsplash.jpg
   price: 9.99
