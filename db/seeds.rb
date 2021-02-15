@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+  Product.create!(
+  title: 'Build Chatbot Interactions',
+  description: 'Responsive, Intuitive Interfaces with Ruby. The next step in the evolution of user interfaces is here.',
+  image_url: 'elena-koycheva-1393825-unsplash.jpg',
+  price: 20.00)
