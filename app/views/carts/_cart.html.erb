@@ -2,6 +2,7 @@
 <% if notice %>
    <aside id= "notice"><%= notice %></aside>
 <% end %>
+<% unless cart.line_items.empty? %>
 <h2>Your Cart</h2>
 <table>
   <%= render (cart.line_items) %>
@@ -13,4 +14,5 @@
   </tfoot>
 </table>
 <%= button_to 'Empty Cart', cart, method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
 </article>
