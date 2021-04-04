@@ -8,8 +8,23 @@
     });
 
     FB.AppEvents.logPageView();
+    checkLoginState();
+  }
+    // Check User Status
+    function statusChangeCallback(response) {
+      console.log(response);
+      if (response.status === 'connected') {
+        console.log('logged in!')
+      } else {
+        console.log('please login')
+      }
+    }
 
-  };
+    function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+    }
 
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
@@ -18,6 +33,10 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
 </script>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=474744143959671&autoLogAppEvents=1" nonce="uGrM4X34"></script>
+
+
+
