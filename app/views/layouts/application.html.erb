@@ -27,6 +27,10 @@
           <li><a href="/news">News</a></li>
           <li><a href="/contact">Contact</a></li>
           <li>
+            <% if user_signed_in? && current_user.fb_uid.present? %>
+              <span id="button-logout"><a href="/">Logout</a></span>
+            <% elsif user_signed_in? %>
+              <%= link_to 'Logout', destroy_user_session_path %>
             <% else %>
               <%= link_to 'Login', new_user_session_path %>
             <% end %>
@@ -41,3 +45,13 @@
   </body>
 </html>
 
+<script>
+  $( "#button-logout" ).click(function() {
+    FB.getLoginStatus(function(response) {
+      FB.logout(function(response){
+        console.log("Logged Out!");
+        window.location = "/users/sign_out";
+      });
+    });
+  });
+</script>
