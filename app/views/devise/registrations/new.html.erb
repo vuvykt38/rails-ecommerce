@@ -27,8 +27,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+<%= render partial: "layouts/fb_sdk" %>
 <br>
-<div class="fb-login-button" data-width="" data-size="small" data-button-type="continue_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false"></div>
-
-
-
+<fb:login-button scope="public_profile,email" data-onlogin="checkLoginState();" class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false">
+</fb:login-button>

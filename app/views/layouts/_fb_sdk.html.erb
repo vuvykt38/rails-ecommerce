@@ -1,5 +1,9 @@
+<!-- <div id="fb-root"></div> -->
+<script crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=474744143959671&autoLogAppEvents=1" nonce="uGrM4X34"></script>
+
+
 <script>
-  window.fbAsyncInit = function() {
+  $(document).ready(function(){
     FB.init({
       appId      : '309468120520764',
       cookie     : true,
@@ -8,13 +12,22 @@
     });
 
     FB.AppEvents.logPageView();
-    checkLoginState();
-  }
-    // Check User Status
+  });
+  setTimeout( function() {
+    function loginWithServer(accessToken) {
+      return $.ajax({
+        type: "POST",
+        url: "/facebook_logins",
+        dataType: "json",
+        data: { access_token: accessToken }
+      });
+    }
+
     function statusChangeCallback(response) {
-      console.log(response);
       if (response.status === 'connected') {
-        console.log('logged in!')
+        loginWithServer(response.authResponse.accessToken).done(function( msg ) {
+          window.location.reload()
+        });
       } else {
         console.log('please login')
       }
@@ -25,18 +38,12 @@
         statusChangeCallback(response);
       });
     }
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-
+  },6000);
+// (function(d, s, id){
+//    var js, fjs = d.getElementsByTagName(s)[0];
+//    if (d.getElementById(id)) {return;}
+//    js = d.createElement(s); js.id = id;
+//    js.src = "https://connect.facebook.net/en_US/sdk.js";
+//    fjs.parentNode.insertBefore(js, fjs);
+//  }(document, 'script', 'facebook-jssdk'));
 </script>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=474744143959671&autoLogAppEvents=1" nonce="uGrM4X34"></script>
-
-
-
