@@ -1,4 +1,4 @@
-<!-- <div id="fb-root"></div> -->
+<div id="fb-root"></div>
 <script crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=474744143959671&autoLogAppEvents=1" nonce="uGrM4X34"></script>
 
 
@@ -39,11 +39,15 @@
       });
     }
   },6000);
-// (function(d, s, id){
-//    var js, fjs = d.getElementsByTagName(s)[0];
-//    if (d.getElementById(id)) {return;}
-//    js = d.createElement(s); js.id = id;
-//    js.src = "https://connect.facebook.net/en_US/sdk.js";
-//    fjs.parentNode.insertBefore(js, fjs);
-//  }(document, 'script', 'facebook-jssdk'));
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
 </script>
+
+<div class="fb-customerchat"
+  page_id="100346688864457">
+</div>
