@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_06_154255) do
+ActiveRecord::Schema.define(version: 2021_05_23_115714) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 2021_04_06_154255) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["fb_uid"], name: "index_users_on_fb_uid", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "webhooks", force: :cascade do |t|
+    t.string "external_event_id"
+    t.string "provider"
+    t.json "payload"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "event_type"
+    t.index ["external_event_id", "provider"], name: "index_webhooks_on_external_event_id_and_provider", unique: true
   end
 
   add_foreign_key "line_items", "carts"
