@@ -5,9 +5,8 @@
 .store {
   max-width: 80em;
   ul.catalog {
-    border-top: solid 0.250em;
     list-style: none;
-    padding: 0;
+    padding: 3em;
     margin: 0;
     li {
       padding: 1em;
@@ -34,7 +33,7 @@
         display: inline;
       }
       input[type='submit'] {
-        background-color: #282;
+        background-color: #007bff;
         border-radius: 0.354em;
         border: solid thin #141;
         color: white;

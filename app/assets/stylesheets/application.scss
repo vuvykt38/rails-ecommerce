@@ -27,8 +27,16 @@ header.main {
     text-align: left;
     padding: 1em;
   }
+  a {
+    color: #bfb;
+    text-decoration: none;
+  }
+  a:hover {
+    background: none;
+    color: white;
+  }
 
-  background: #3c3c3b;
+  background: #3F9CFF;
   margin: 0;
   h1 {
     display: none;
@@ -50,11 +58,11 @@ header.main {
   }
   nav {
     padding-bottom: 1em;
-    background: #3c3c3b;
+    background: #3F9CFF;
     text-align: center;
     @media (min-width: 30em) {
       text-align: left;
-      padding: 1em;
+      padding: 0em 1em 1em;
     }
 
     ul {
