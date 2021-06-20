@@ -30,8 +30,11 @@
       <main class="<%= controller.controller_name %>">
         <%= yield %>
       </main>
-      <%= render "layouts/fb_sdk" %>
     </section>
+    <footer>
+      <%= render "layouts/footer" %>
+    </footer>
+    <%= render "layouts/fb_sdk" %>
   </body>
 </html>
 
