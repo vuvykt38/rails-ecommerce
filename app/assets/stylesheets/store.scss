@@ -6,7 +6,6 @@
   max-width: 80em;
   ul.catalog {
     list-style: none;
-    padding: 3em;
     margin: 0;
     li {
       padding: 1em;
@@ -41,28 +40,8 @@
         padding: 0.354em 1em;
       }
       input[type='submit']:hover {
-        background-color: #141;
+        background-color: #0069d9;
       }
     }
   }
 }
-
-// ​     .price {
-// ​       font-size: 1.414em;
-// ​     }
-// ​
-// »   form, div {
-// »     display: inline;
-// »   }
-// »   input[type=​"submit"​] {
-// »     background-color: #282;
-// »     border-radius: 0.354em;
-// »     border: solid thin #141;
-// »     color: white;
-// »     font-size: 1em;
-// »     padding: 0.354em 1em;
-// »   }
-// »   input[type=​"submit"​]:hover {
-// »     background-color: #141;
-// »   }
-// ​   }
