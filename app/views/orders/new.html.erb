@@ -1,4 +1,30 @@
-<section class="depot_form">
-  <h1>Please Enter Your Details</h1>
-  <%= render 'form', order: @order %>
-</section>
+<div class="col-md-12 order-md-1">
+  <h4 class="mb-3">Please Enter Your Details</h4>
+  <%= form_with(model: @order, local: true) do |form| %>
+    <form class="needs-validation" novalidate>
+      <div class="mb-3">
+        <%= form.label :name %>
+        <%= form.text_field :name, class:'form-control' %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :email %>
+        <%= form.text_field :email, class:"form-control", id:'email', placeholder:"you@example.com" %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :address %>
+        <%= form.text_area :address, class:"form-control", id:"address", placeholder:"1234 Main St" %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :pay_type %>
+        <span class="form-control">
+        <%= form.select :pay_type, Order.pay_types.keys, prompt: 'Select a payment method' %>
+        </span>
+      </div>
+      <hr class="mb-4">
+      <%= form.submit 'Place Order', class: 'btn btn-primary btn-lg btn-block' %>
+    </form>
+  <% end %>
+</div>
