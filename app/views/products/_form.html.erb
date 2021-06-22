@@ -31,6 +31,10 @@
     <%= form.text_field :price %>
   </div>
 
+  <div class="field">
+    <%= form.select :category, Product.categories.keys, prompt: 'Select a category' %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
