@@ -1,40 +1,40 @@
 <ul class="nav flex-column py-3">
   <li class="nav-item">
-    <a class="nav-link active" href="#">
-      <span data-feather="home"></span>
+    <a class="nav-link active" href="<%= store_index_path %>">
       Products <span class="sr-only">(current)</span>
     </a>
   </li>
-  <%# Product.categories.keys.each do |category| %>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <span data-feather="file"></span>
-        Category
-        <%#= category %>
-      </a>
-    </li>
-  <%# end -%>
+
+  <li class="nav-item" data-toggle="collapse" data-target="#category">
+    <a class="nav-link" href="#">Category</a>
+    <ul class="sub-menu collapse" id="category">
+      <% Product.categories.keys.each do |category| %>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= store_index_path(category: category) %>">
+            <%= category %>
+          </a>
+        </li>
+      <% end -%>
+    </ul>
+  </li>
+
   <li class="nav-item">
     <a class="nav-link" href="#">
-      <span data-feather="shopping-cart"></span>
       Contact Us
     </a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">
-      <span data-feather="users"></span>
       About Us
     </a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">
-      <span data-feather="bar-chart-2"></span>
       Return Policy
     </a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">
-      <span data-feather="layers"></span>
       Term Of Use
     </a>
   </li>
