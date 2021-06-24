@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   resources :facebook_logins, only: [:create]
   resources :line_items
   resources :carts
+  resources :newsletters, only: [] do
+    collection do
+      post :subscribe
+    end
+  end
+
   root 'store#index', as: 'store_index'
   resources :products do
     get :who_bought, on: :member

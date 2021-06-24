@@ -5,14 +5,13 @@
   <div class="col-sm-12">
     <div class="single text-center">
       <h2>Subscribe to our Newsletter</h2>
-    <div class="input-group ms-1 pt-2">
+    <form method="POST" action="<%= subscribe_newsletters_path %>" class="input-group ms-1 pt-2">
        <p class="col-3"></p>
        <input type="email" class="form-control col-md-5 mb-3 mb-md-2" placeholder="Enter your email">
        <span class="input-group-btn">
-       <a class="btn btn-theme btn-primary col-sm-12 ml-md-2" href="/newsletter/subscribe">Subscribe</a>
+       <button type="submit" class="btn btn-theme btn-primary col-sm-12 ml-md-2">Subscribe</button>
        </span>
-        </div>
-    </div>
+    </form>
   </div>
   </div>
   </div>
