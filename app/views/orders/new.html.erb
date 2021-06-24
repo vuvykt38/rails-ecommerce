@@ -5,16 +5,37 @@
       <div class="mb-3">
         <%= form.label :name %>
         <%= form.text_field :name, class:'form-control' %>
+        <% if @order.errors[:name].any? %>
+          <ul>
+            <% @order.errors[:name].each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
       </div>
 
       <div class="mb-3">
         <%= form.label :email %>
         <%= form.text_field :email, class:"form-control", id:'email', placeholder:"you@example.com" %>
+        <% if @order.errors[:email].any? %>
+          <ul>
+            <% @order.errors[:email].each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
       </div>
 
       <div class="mb-3">
         <%= form.label :address %>
         <%= form.text_area :address, class:"form-control", id:"address", placeholder:"1234 Main St" %>
+        <% if @order.errors[:address].any? %>
+          <ul>
+            <% @order.errors[:address].each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
       </div>
 
       <div class="mb-3">
