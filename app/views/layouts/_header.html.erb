@@ -3,12 +3,14 @@
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="form-inline col-md-2 ml-md-auto">
+  <div class="col">
+  </div>
+  <form class="form-inline">
     <%= form_tag(store_index_path, method: :get) do %>
     <%= text_field_tag :term, "", class: 'form-control mr-sm-2', placeholder: 'Enter search term...'  %>
     <%= submit_tag 'Search', class:"btn btn-primary my-2 my-sm-0" %>
     <% end %>
-  </div>
+  </form>
   <ul class="navbar-nav px-3">
     <% unless user_signed_in? %>
       <li class="nav-item text-nowrap">

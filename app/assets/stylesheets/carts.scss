@@ -8,6 +8,7 @@
   // border-bottom: solid thin #ddd;
   table {
     border-collapse: collapse;
+    margin-bottom: 1em;
   }
   td {
     padding: 0.5em;
@@ -40,7 +41,7 @@
       border: solid thin #441;
       color: white;
       font-size: 1em;
-      padding: 0.354em 1em;
+      padding: 0.2em 0.5em;
     }
     input[type="submit"]:hover {
       background-color: #992;

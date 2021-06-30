@@ -12,8 +12,8 @@
 </table>
 <div class="container">
   <div class="row">
-    <div class="col"><%= button_to 'Empty Cart', cart, :method => :delete, data: {:confirm => "You sure?" } %></div>
-    <div class="col"><%= button_to 'Checkout', new_order_path, method: :get %></div>
+    <div><%= button_to 'Empty Cart', cart, :method => :delete, class: 'mr-sm-2', data: {:confirm => "You sure?" } %></div>
+    <div><%= button_to 'Checkout', new_order_path, method: :get %></div>
   </div>
 </div>
 
