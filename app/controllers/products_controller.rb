@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   include CurrentCart
   before_action :set_cart
+  before_action :authenticate_user!, :authorize_user!, except: [:index, :show]
   before_action :set_product, only: %i[ show edit update destroy ]
 
   # GET /products or /products.json
@@ -80,6 +81,11 @@ class ProductsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
+    end
+
+    def authorize_user!
+      return true if current_user.email == "vuvykt38@gmail.com"
+      redirect_to store_index_url, notice: "You are not authorised to view this resource"
     end
 
     # Only allow a list of trusted parameters through.
