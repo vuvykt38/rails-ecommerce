@@ -1,2 +1,9 @@
 cart = document.getElementById("cart")
 cart.innerHTML = "<%= j render(@cart) %>"
+var last_cart_item = {
+  "name": <%= raw @line_item.product.title.to_json %>,
+  "price": Number(<%= raw @line_item.product.price.to_json %>),
+  "category": <%= raw @line_item.product.category.to_json %>,
+  "description": <%= raw @line_item.product.description.to_json %>
+}
+sessionStorage.setItem("last_cart_item", JSON.stringify(last_cart_item))
