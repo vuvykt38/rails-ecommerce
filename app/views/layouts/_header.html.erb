@@ -19,7 +19,7 @@
     <% end %>
     <% if user_signed_in? %>
       <li class="nav-item text-nowrap">
-        <a class="nav-link" href="<%= destroy_user_session_path %>" data-method="delete" >Log Out</a>
+        <a class="nav-link" href="<%= destroy_user_session_path %>" id="logout_button">Log Out</a>
       </li>
     <% end %>
   </ul>
