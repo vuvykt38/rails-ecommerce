@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
   before_action :ensure_cart_isnt_empty, only: :new
+  before_action :authorize_user!, except: [:new, :create]
   before_action :set_order, only: [:show, :edit, :update, :destroy​]
 
   # GET /orders or /orders.json
@@ -76,5 +77,10 @@ class OrdersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def order_params
       params.require(:order).permit(:name, :address, :email, :pay_type)
+    end
+
+    def authorize_user!
+      return true if current_user&.email == "vuvykt38@gmail.com"
+      redirect_to new_order_url, notice: "You are not authorised to view this resource"
     end
 end
