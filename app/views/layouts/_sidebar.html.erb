@@ -5,9 +5,9 @@
     </a>
   </li>
 
-  <li class="nav-item" data-toggle="collapse" data-target="#category">
-    <a class="nav-link" href="#">Category</a>
-    <ul class="sub-menu collapse" id="category">
+  <li class="nav-item" data-toggle="" data-target="#category">
+    <a class="nav-link" href="">Category</a>
+    <ul class="sub-menu" id="category">
       <% Product.categories.keys.each do |category| %>
         <li class="nav-item">
           <a class="nav-link" href="<%= store_index_path(category: category) %>">

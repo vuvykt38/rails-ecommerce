@@ -14,7 +14,7 @@ class Product < ApplicationRecord
     "Comedy" => "Comedy",
     "Drama" => "Drama",
     "Kids" => "Kids",
-    "Romantic Comedy" => "Romantic Comedy",
+    "Romantic" => "Romantic",
     "Horror" => "Horror"
   }
   validates :category, inclusion: categories.keys
