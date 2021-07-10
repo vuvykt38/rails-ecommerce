@@ -1,3 +1,7 @@
+<% if notice %>
+   <aside id= "notice"><%= notice %></aside>
+<% end %>
+<br>
 <div class="col-md-12 order-md-1">
   <h4 class="mb-3">Please Enter Your Details</h4>
   <%= form_with(model: @order, local: true) do |form| %>
